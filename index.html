@@ -53,8 +53,17 @@
                 <div class="hero-container">
                     <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
                     <!--<a href="" class="link">Заказать услугу</a>-->
-                    <button type="button" class="button">Заказать услугу</button>
+                    <button data-open-modal type="button" class="button">Заказать услугу</button>
                 </div>
+                <div class="backdrop is-hidden" data-backdrop>
+                    <div class="modal">
+                        <button data-close-modal class="button-modal">
+                            <svg class="icon-close-modal" width= "11" height="11">
+                                <use href="./images/sprite.svg#vector-close"></use>
+                            </svg> 
+                        </button>
+                    </div>
+                  </div>
             </section>
             <!--section2-page-feature-->
             <section class="section section-feature">
@@ -396,5 +405,25 @@
             </div>
         </div>
         </footer>
+        <script>
+            const refs = {
+              openModalBtn: document.querySelector("[data-open-modal]"),
+              closeModalBtn: document.querySelector("[data-close-modal]"),
+              backdrop: document.querySelector("[data-backdrop]"),
+            };
+      
+            refs.openModalBtn.addEventListener("click", toggleModal);
+            refs.closeModalBtn.addEventListener("click", toggleModal);
+      
+            refs.backdrop.addEventListener("click", logBackdropClick);
+      
+            function toggleModal() {
+              refs.backdrop.classList.toggle("is-hidden");
+            }
+      
+            function logBackdropClick() {
+              console.log("Это клик в бекдроп");
+            }
+          </script>
     </body>
 </html>
