@@ -162,10 +162,9 @@ body {
 .menu-link:focus {
   color: var(--accent-color);
 }
-
 /* .menu-link:hover:after,
 .menu-link:focus:after, */
-.current::after {
+.current::after{
   content: "";
   display: block;
   width: 100%;
@@ -176,8 +175,6 @@ body {
   background-color: var(--accent-color);
   border-radius: 2px;
 }
-  
-  
 .contact-list .link {
   color: var(--primary-text-color);
   font-weight: 500;
@@ -492,8 +489,6 @@ body {
   flex-basis: calc(100% / 3 - 30px);
 
   background-color: var(--primary-white-color);
-
-  
 }
 .item-portfolio .link {
  transition: 250ms var(--bezier-page);
@@ -544,10 +539,10 @@ body {
   transform: translatey(100%);
   transition: transform 250ms var(--bezier-page);
 }
-.card-portfolio-overley:hover .card-description {
+.link-overley:hover .card-description,
+.link-overley:focus .card-description {
   transform: translatey(0);
 }
-
 .card-description {
   color: var(--primary-white-color);
   padding: 63px 24px;
