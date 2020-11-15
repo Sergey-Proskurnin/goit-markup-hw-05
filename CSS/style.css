@@ -145,6 +145,9 @@ body {
   align-items: center;
   margin-right: auto;
 }
+.site-nav-item {
+  position: relative;
+}
 .menu-link {
   color: var(--title-text-color);
   font-weight: 500;
@@ -152,7 +155,7 @@ body {
   text-decoration: none;
   letter-spacing: 0.02em;
 
-  position: relative;
+  /* position: relative; */
   transition: 250ms var(--bezier-page);
 }
 .menu-link.current {
@@ -170,8 +173,9 @@ body {
   width: 100%;
   height: 4px;
   position: absolute;
-  bottom: -31.85px;
-  
+  /* bottom: -31.85px; */
+  bottom: -28.5px;
+ 
   background-color: var(--accent-color);
   border-radius: 2px;
 }
@@ -467,7 +471,6 @@ body {
 .list-button .button{
   transition: 250ms var(--bezier-page);
 }
-
 .list-button .button:hover,
 .list-button .button:focus {
   background-color: var(--accent-color);
@@ -498,7 +501,6 @@ body {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
 .title-portfolio {
   color: var(--title-text-color);
   font-weight: 700;
@@ -533,8 +535,12 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(33, 150, 243, 0.9);
-
-  overflow: hidden;
+  
+  color: var(--primary-white-color);
+  padding: 63px 24px;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.56;
 
   transform: translatey(100%);
   transition: transform 250ms var(--bezier-page);
@@ -542,13 +548,6 @@ body {
 .link-overley:hover .card-description,
 .link-overley:focus .card-description {
   transform: translatey(0);
-}
-.card-description {
-  color: var(--primary-white-color);
-  padding: 63px 24px;
-  margin: 0;
-  font-size: 18px;
-  line-height: 1.56;
 }
 /*footer-address*/
 .footer {
@@ -614,7 +613,7 @@ body {
 .social-item .social-img-white:hover {
   background-color: var(--accent-color);
 }
-/* modal-windows-css*/
+/* modal-window-css*/
 .backdrop {
   position: fixed;
   top: 0;
@@ -631,15 +630,19 @@ body {
   opacity: 0;
   pointer-events: none;
 }
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
+  transition: transform 250ms var(--bezier-page);
+}
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   z-index: 2;
   min-height: 581px;
   min-width: 528px;
-  padding: 15px;
+  /* padding: 15px; */
 
   background-color: #fff;
   border-radius: 4px;
@@ -659,14 +662,10 @@ body {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  
-  margin: 0;
-  padding: 0;
-  box-shadow: none;
-  cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--primary-white-color);
 }
+
 .icon-close-modal{
   fill: #000000;
 }
